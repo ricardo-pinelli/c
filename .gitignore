@@ -1,0 +1,20 @@
+# Compiled binaries
+*.o
+*.out
+*.exe
+
+# macOS debug symbols
+**/*.dSYM/
+
+# Executables without extension (compiled C programs)
+authentication_project/authentication
+exercises/**/app
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+
+# Exclude specific folders
+docs/solent_problem_solving/
