@@ -120,7 +120,7 @@ int main () {
                 scanf(" %c", &returnToMenu);
 
                 if (returnToMenu != 'y') {
-                    menuOption = 0;
+                    menuOption = 1;
                 }
             break;
 
