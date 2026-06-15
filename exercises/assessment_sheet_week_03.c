@@ -3,20 +3,22 @@
 int main() {
     int menuOption;
 
-    float millilitresConsumed;
-    float bottlesConsumed;
-    float cupsConsumed;
+    int millilitresConsumed;
+    int bottlesConsumed;
+    int cupsConsumed;
 
-    float totalLitres;
-    float totalCups;
-
-    float litre = 1000;
-    float bottles = 500;
-    float cup = 240;
+    int litre = 1000;
+    int bottles = 500;
+    int cup = 240;
+    
+    float waterIntakeLitres = 0.00;
+    float waterIntakeMillilitres = 0;
 
     char addNewDay = 'y';
-    float waterIntake = 0.00;
-    int totalDays;
+
+    int totalMLInputs = 0;
+    int totalBottlesInputs = 0;
+    int totalCupsInputs = 0;
 
     while(addNewDay == 'y') {
         printf("What would you like to add? \n1: Millilitres\n2: Bottles (500 ml each)\n3: Cups (240 ml each)\n");
@@ -26,40 +28,47 @@ int main() {
 
         switch(menuOption) {
             case 1:
-                printf("Enter water intake for today (ml): ");
-                scanf(" %f", &millilitresConsumed);
+                printf("\n\nEnter water intake for today (ml): ");
+                scanf(" %i", &millilitresConsumed);
         
-                totalLitres = millilitresConsumed / litre;
-                totalCups = millilitresConsumed / cup;
+                waterIntakeMillilitres = waterIntakeMillilitres + millilitresConsumed;
+                totalMLInputs++;
+
+                printf("Added %i ml.\n", millilitresConsumed);
+                
             break;
             case 2:
                 printf("How many bottles?: ");
-                scanf(" %f", &millilitresConsumed);
-        
-                totalLitres = millilitresConsumed / bottles;
-                totalCups = millilitresConsumed / cup;
+                scanf(" %i", &bottlesConsumed);
+
+                int totalMLBottlesConsumed = bottlesConsumed * bottles;
+
+                waterIntakeMillilitres = waterIntakeMillilitres + totalMLBottlesConsumed;
+                totalBottlesInputs++;
+
+                printf("Added %i ml.\n", totalMLBottlesConsumed);
             break;
             case 3: 
                 printf("how many cups?: ");
-                scanf(" %f", &cupsConsumed);
+                scanf(" %i", &cupsConsumed);
 
-                totalLitres = cupsConsumed * cup;
-                printf("Litres: %.2fL | ", totalLitres);
+                int totalMLCupsConsumed = cupsConsumed * cup;
+
+                waterIntakeMillilitres = waterIntakeMillilitres + totalMLCupsConsumed;
+                totalCupsInputs++;
+
+                printf("Added %i ml.\n", totalMLCupsConsumed);
         }
 
-
-
-        // printf("Litres: %.2fL | ", totalLitres);
-        // printf("Cups (240 ml): %.2f cups \n", totalCups);
-
-        // waterIntake = waterIntake + totalLitres;
-        // totalDays++;
-
-        printf("Add another day? (y/n): ");
+        printf("\nAdd another day? (y/n): ");
         scanf(" %c", &addNewDay);
     };
 
-    printf("You tracked %i days. Total: %.2f L \n", totalDays, waterIntake);
+    waterIntakeLitres = waterIntakeMillilitres / litre;
+
+    printf("\n\n\nSummary:\n");
+    printf("Total: %.0f ml (%.2f L)\n", waterIntakeMillilitres, waterIntakeLitres);
+    printf("Entries — Bottles: %i, Cups: %i, Millilitres: %i\n", totalBottlesInputs, totalCupsInputs, totalMLInputs);
 
     return 0;
 }
