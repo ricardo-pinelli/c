@@ -58,7 +58,6 @@ int main () {
                     break;
                 }
 
-
                 switch(zone) {
                     case 'S':
                         zoneLabel = "Sharks";
@@ -83,8 +82,7 @@ int main () {
                     case 'N':
                         ticketTypeLabel = "Standard";
                         break;
-                        
-                        case 'E':
+                    case 'E':
                         ticketTypeLabel = "Express";
                         break;
                 };
@@ -103,7 +101,7 @@ int main () {
                 };
 
                 float bulkDiscount = totalPriceBeforeDiscount - (totalPriceWithDiscount - addOnCost);
-                
+
                 printf("\n\n=== TICKET INFORMATION ===\n\n");
                 printf("Zone: %s\n", zoneLabel);
                 printf("Ticket type: %s\n", ticketTypeLabel);
@@ -126,7 +124,6 @@ int main () {
 
             case 2:
                 printf("\n\n--- View Ticket Prices --- \n");
-                
                 printf("Zone\t\tStandard\tExpress\n\n");
                 printf("Sharks\t\t£22.00\t\t£32.00\n");
                 printf("Reefs\t\t£18.00\t\t£28.00\n");

@@ -10,7 +10,7 @@ int main() {
     int litre = 1000;
     int bottles = 500;
     int cup = 240;
-    
+
     float waterIntakeLitres = 0.00;
     float waterIntakeMillilitres = 0;
 
@@ -30,12 +30,11 @@ int main() {
             case 1:
                 printf("\n\nEnter water intake for today (ml): ");
                 scanf(" %i", &millilitresConsumed);
-        
+
                 waterIntakeMillilitres = waterIntakeMillilitres + millilitresConsumed;
                 totalMLInputs++;
 
                 printf("Added %i ml.\n", millilitresConsumed);
-                
             break;
             case 2:
                 printf("How many bottles?: ");
@@ -48,7 +47,7 @@ int main() {
 
                 printf("Added %i ml.\n", totalMLBottlesConsumed);
             break;
-            case 3: 
+            case 3:
                 printf("how many cups?: ");
                 scanf(" %i", &cupsConsumed);
 
@@ -58,9 +57,10 @@ int main() {
                 totalCupsInputs++;
 
                 printf("Added %i ml.\n", totalMLCupsConsumed);
+            break;
         }
 
-        printf("\nAdd another day? (y/n): ");
+        printf("\nAdd another entry? (y/n): ");
         scanf(" %c", &addNewDay);
     };
 
@@ -72,5 +72,3 @@ int main() {
 
     return 0;
 }
-
-

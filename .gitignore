@@ -15,6 +15,3 @@ exercises/**/app
 
 # Editor
 .vscode/
-
-# Exclude specific folders
-docs/solent_problem_solving/
